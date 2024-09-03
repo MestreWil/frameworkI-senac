@@ -7,6 +7,8 @@ class Program
 {
     public static void Main(string[] args)
     {
+
+        Console.WriteLine("Somando Valores: " + Calculadora.Somar(10, 20));
         Console.WriteLine("Criando Clientes: \n");
         //Cliente cliente1 = new Cliente("João", "11 99999-9999", "ztejd@example.com", "Rua A, 123");
         //Cliente cliente2 = new Cliente("Bruno", "11 99999-9999", "elchapo@example.com", "Rua B, 123");
@@ -30,6 +32,8 @@ class Program
         c2.Info();
 
         pf1.Info();
+
+        Console.WriteLine("Quantidade de Contas c1: " + Conta.TotalDeContas);
 
     }
 }
