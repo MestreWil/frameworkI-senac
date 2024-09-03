@@ -60,4 +60,16 @@ public class Conta
             Console.WriteLine("Saldo insuficiente. SEU SALDO ATUAL:" + this.Saldo);
         }
     }
+    public void Transferir(double valor, Conta destino){
+        if (Saldo >= valor)
+        {
+            Saldo -= valor;
+            destino.Depositar(valor);
+            Console.WriteLine("Transferencia feita com sucesso. SALDO ATUAL:" + this.Saldo);
+        }
+        else 
+        {
+            Console.WriteLine("Saldo insuficiente. SEU SALDO ATUAL:" + this.Saldo);
+        }
+    }
 }
