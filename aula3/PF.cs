@@ -1,18 +1,29 @@
 using System;
 
-class PJ : Cliente {
+class PF : Cliente
+{
+    public string Cpf { get; set; }
+    public TipoEstadoCivil EstadoCivil { get; set; }
 
-   public string Cnpj { get; set; }
-   public DateOnly DataAbertura { get; set; }
-
-    public PJ(string nome, string telefone, string email, string endereco, string cnpj, DateOnly dataAbertura) : base(nome, telefone, email, endereco){
-      this.Cnpj = cnpj;
-      this.DataAbertura = dataAbertura;
+    public PF(string nome, string telefone, string email, string endereco, string cpf, TipoEstadoCivil estadoCivil) : base(nome, telefone, email, endereco)
+    {
+        this.Cpf = cpf;
+        this.EstadoCivil = estadoCivil;
     }
 
-  public override void Info(){
-    base.Info();
-    Console.Write(this.Cnpj + "\n" + this.DataAbertura + "\n");
-    Console.WriteLine("Data de Abertura: " + this.DataAbertura.ToString("dd/MM/yyyy"));
-  }
+    public enum TipoEstadoCivil
+    {
+        Solteiro,
+        Casado,
+        Divorciado,
+        Viuvo,
+    }
+
+    // A palavra reservada override é usada para indicar que o método sobrescrito esta sendo modificado
+
+    public override void Info()
+    {
+        base.Info();
+        Console.Write(this.Cpf + "\n" + this.EstadoCivil + "\n");
+    }
 }
